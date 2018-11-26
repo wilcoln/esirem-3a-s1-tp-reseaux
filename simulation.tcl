@@ -6,7 +6,7 @@ set nf [open out.nam w]
 $ns namtrace-all $nf
 
 # Définir la procédure de terminaison de la simulation
-proc finish{} {
+proc finish {} {
 	global ns nf
 	$ns flush-trace
 	#fermer le fichier trace
@@ -21,7 +21,7 @@ proc finish{} {
 
 set n(0) [$ns node]
 set n(1) [$ns node]
-$ns duplex-link $n(1) $n(2) 1Mb 10ms DropTail
+$ns duplex-link $n(0) $n(1) 1Mb 10ms DropTail
 
 # Création de l'agent UDP
 set udp [new Agent/UDP]
