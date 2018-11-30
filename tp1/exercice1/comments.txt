@@ -1,0 +1,3 @@
+$ Il est impossible de spécifier la taille des paquets émits par la source cbr, fixée à 210 bytes
+$ Durant la simulation on remarque que la taille des paquets transporté par le lien udp vaut 210 Bytes malgré le fait que l'on ait spécifié dans les configuration une taille maximale de 500 bytes comme le montre la capture x. Ceci est dû au fait que la source cbr emet des paquets de taille maximal 210 bytes et cela ne peut être changé en mode interface graphique
+$ D'où notre préférence pour le mode script car il permet une plus grande flexibilité dans nos configurations.

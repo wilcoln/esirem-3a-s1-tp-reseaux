@@ -28,6 +28,9 @@ $ns duplex-link $n(0) $n(2) 2Mb 10ms DropTail
 $ns duplex-link $n(1) $n(2) 2Mb 10ms DropTail
 $ns duplex-link $n(2) $n(3) 1.7Mb 20ms DropTail
 
+# On fixe la taille du buffeur entre n2 et n3
+$ns queue-limit $n(2) $n(3) 10
+
 #Positionnement des noeuds
 $ns duplex-link-op $n(0) $n(2) orient right-down
 $ns duplex-link-op $n(1) $n(2) orient right-up
@@ -54,7 +57,7 @@ $ftp attach-agent $tcp
 set tcpsink [new Agent/TCPSink]
 $ns attach-agent $n(3) $tcpsink
 
-#Connection des agents TCPSink et TCP
+# Connection des agents TCPSink et TCP
 $ns connect $tcp $tcpsink
 
 # Création de l'agent UDP
